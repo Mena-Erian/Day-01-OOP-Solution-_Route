@@ -62,8 +62,19 @@ namespace Common
          * 
          */
 
-
         /// Default Access Modifier inside the Class and the Struct is 'private'
+
+
+        // This Fields is Object Member
+        /*private*/
+        int X;  // Just Access in this Class
+        internal int Y; // Just in this Project not in Another Project
+        public int Z;   // Any Can Access
+
+        public void Print()
+        {
+            Console.WriteLine(this.X);
+        }
 
     }
 
@@ -183,5 +194,8 @@ namespace Common
 
     public delegate string Func(int Number); // C# Feature (Startage Design pattern)
 
-    public record Person (int Id, string Name); //Begian C# 9.0 // like Class & Struct
+    public record Person(int Id, string Name); //Begian C# 9.0 // like Class & Struct
+
+
+
 }

@@ -27,11 +27,22 @@ namespace Demo
              */
 
             #endregion
-        
+
             // TypeA i Can't Access Here becouse is internal and they in another project
             // Now They Public so i can access
             TypeA typeA = new TypeA();
+            //typeA.X = 10; [Invalid] X is inaccessible due to its protection level "private".
+            //typeA.Y = 20; [InValid] Y is inaccessible due to its protection level  "internal"
+            typeA.Z = 30; // [Valid]  Z is "public"
 
+            EmployeeBase employee = new EmployeeBase();
+            FullTimeEmployee employee2 = new FullTimeEmployee();
+
+            TypeD obj = new TypeD();
+            //obj.
+            //obj.X; not vaild
+            //obj.Y; not vaild
+            //obj.Z = 30; //Here not vaild is internal
         }
     }
 }
