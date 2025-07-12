@@ -1,9 +1,13 @@
-﻿using Common;
+﻿/*global*/ //using Common; // if i use this in most
 
 namespace Demo
 {
     internal class Program
     {
+        //public static void Run (IVechile car)
+        //{
+        //    car.Accelerate();
+        //}
         static void Main()
         {
             #region Access Modifiers
