@@ -20,20 +20,12 @@ namespace Common
         private protected string? Name;
         private protected int Age;
 
-
-
-
-
-
         internal protected void Test()
         {
 
         }
 
-
-
         // Access Scope = , Inheritance Scope = 
-
 
         // 'private' =>          Access Scope = 'private', Inheritance Scope = Dosn't inherit it
 
@@ -58,7 +50,10 @@ namespace Common
             Birthday = birthday;
             Test();
         }
-
+        void getSalary()
+        {
+            Test();
+        }
         private decimal Salary;
     }
     class PartTimeEmployee : EmployeeBase

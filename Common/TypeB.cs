@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Common
 {
-    internal class TypeB : TypeD
+    public class TypeB : TypeD
     {
         internal int testInternal;
         public TypeB() // Special Funtion
@@ -21,11 +21,6 @@ namespace Common
             EmployeeBase employee = new EmployeeBase();
             employee.Test();
             //TypeC typeC = new TypeC();
-
-
-
-
-
         }
 
         public TypeB(int x, int y, int z)
@@ -36,13 +31,12 @@ namespace Common
             _internal_protected = z; // internal
         }
 
-        public void Test()
+        public void TestTypeB()
         {
             TypeD obj = new TypeD();
             //obj.X; not vaild
             //obj.Y; not vaild
             obj._internal_protected = 30; // vaild is internal
-
         }
 
     }

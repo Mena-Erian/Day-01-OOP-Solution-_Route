@@ -10,7 +10,9 @@ namespace Common
     {
         private int H;
         private protected int _private_Protected;    // private //can't inheret in another project
-        protected int _protected;            // private //can inheret in another projtect
-        internal protected int _internal_protected;   // internal
+        protected int _protected;                    // private //can inheret in another projtect
+        internal protected int _internal_protected;  // internal
+        internal int _internal;
+        public int _public;
     }
 }

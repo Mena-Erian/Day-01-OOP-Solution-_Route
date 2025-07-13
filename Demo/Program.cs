@@ -39,6 +39,11 @@ namespace Demo
             FullTimeEmployee employee2 = new FullTimeEmployee();
 
             TypeD obj = new TypeD();
+            TypeB typeB = new TypeB();
+            //typeB.TestTypeB();
+
+            
+
             //obj.
             //obj.X; not vaild
             //obj.Y; not vaild
