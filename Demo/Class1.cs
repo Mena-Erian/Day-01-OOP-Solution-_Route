@@ -6,25 +6,25 @@ using System.Threading.Tasks;
 
 namespace Demo
 {
-    internal class Class1 : TypeD
-    {
-        public Class1()
-        {
+    //internal class Class1 /*: TypeD*/
+    //{
+    //    public Class1()
+    //    {
 
-            _protected = 9;//private
-            _internal_protected = 8;//private
+    //        _protected = 9;//private
+    //        _internal_protected = 8;//private
 
-        }
-        internal int x;
-    }
-    public class Class2
-    {
-        public Class2()
-        {
+    //    }
+    //    internal int x;
+    //}
+    //public class Class2
+    //{
+    //    public Class2()
+    //    {
 
-            Class1 class1 = new Class1();
-            //class1.
-        }
+    //        Class1 class1 = new Class1();
+    //        //class1.
+    //    }
 
-    }
+    //}
 }
