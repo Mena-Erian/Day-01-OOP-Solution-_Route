@@ -22,6 +22,15 @@ namespace Demo
         // Don't Make label = 0
         yy = 0, Male = 1, Female = 2
     }
+
+    // byte = 8 bites [0: 255]
+    [Flags]
+    enum Permission : byte /* : Short*/
+    {
+        /* from byte to decimal => 2pow index*/
+        Read = 1, write = 2, Excute = 4, Update = 8, Test = 16, XX = 32, YY = 64, ZZ = 128,
+        /*2pow(0)=1,2pow(1)=2,2pow(2)=4,2pow(3)=8,2pow(4)=16,2pow(5)=32,2pow(6)=64,2pow(7)=128     */
+    }
     internal class Program
     {
         //public static void Run (IVechile car)
@@ -71,6 +80,8 @@ namespace Demo
 
             #endregion
 
+            #region Enum
+
             #region Part 01
             ///Person person = new Person();
             ///person.Id = 1001;
@@ -110,6 +121,51 @@ namespace Demo
             /// Console.WriteLine(myGender);
             #endregion
 
+            #region Part 03
+            /// Permission myPermission = (Permission)3; //Read, write
+            /// //(Binary Compare)
+            /// /* 1,2,4,8,16,32,64,128  */
+            /// //That if you wand to add permission
+            /// //              1 + 2 = 3   |       Ecute = 4
+            /// myPermission = myPermission | Permission.Excute; // 3 | 4
+            /// //                  (Add Permission)            [0011]|[0100] = [0111]
+            /// //                                            back to decimal = (8*0)+(4*1)+(2*1)+(1*1)
+            /// //                                                            =  0+4+2+1 = 7
+            /// Console.WriteLine(myPermission); //Read, write, Excute        =    7 
+            /// 
+            /// /// //myPermission = 7
+            /// myPermission = myPermission & Permission.write;  // 7 & 2
+            /// //                                              [0111]&[0010] = [0010]
+            /// //                                            back to decimal = (8*0)+(4*0)+(2*1)+(1*0)
+            /// //                                                            = 0+0+2+0 = 2
+            /// Console.WriteLine(myPermission); // write                     =     2
+            /// 
+            /// myPermission &= ~(Permission.write);  // 7 & ~(2) =>
+            /// //                                [0111]&~[0010] =>
+            /// //                                [0111]& [1101] = [0101]
+            /// //                              back to decimal = (8*0)+(4*1)+(2*0)+(1*1)
+            /// //                                              = 0+4+0+1 = 5
+            /// Console.WriteLine(myPermission); //Read, Excute           = 5 
+            /// 
+            /// /// What does XOR(^) do? It compares each bit of two numbers:
+            /// /// If the bits are the same → result is 0
+            /// /// If the bits are different → result is 1
+            /// 
+            /// 
+            /// /* 1,2,4,8,16,32,64,128  */
+            /// //   f(5)     =    5 ^ 4     
+            /// myPermission ^= Permission.Excute;
+            /// Console.WriteLine(myPermission); //Write     
+            /// myPermission ^= Permission.Excute; // like toggle
+            /// Console.WriteLine(myPermission); //Write , Excute  
+            /// 
+            /// // `|=`  => to Add
+            /// // `&= ~()  `  => to Delete
+            /// // `^=` => to Toggle
+
+            #endregion
+
+            #endregion
         }
     }
 }
