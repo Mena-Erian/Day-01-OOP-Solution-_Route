@@ -56,42 +56,42 @@ namespace Demo
              */
 
             #region Examples
-            ///// TypeA i Can't Access Here becouse is internal and they in another project
-            ///// Now They Public so i can access
-            ///TypeA typeA = new TypeA();
-            /////typeA.X = 10; [Invalid] X is inaccessible due to its protection level "private".
-            /////typeA.Y = 20; [InValid] Y is inaccessible due to its protection level  "internal"
-            ///typeA.Z = 30; // [Valid]  Z is "public"
-            ///
-            ///EmployeeBase employee = new EmployeeBase();
-            ///FullTimeEmployee employee2 = new FullTimeEmployee();
-            ///
-            ///TypeD obj = new TypeD();
-            ///TypeB typeB = new TypeB();
-            /////typeB.TestTypeB();
-            ///
-            ///
-            ///
-            /////obj.
-            /////obj.X; not vaild
-            /////obj.Y; not vaild
-            /////obj.Z = 30; //Here not vaild is internal
+            /// // TypeA i Can't Access Here becouse is internal and they in another project
+            /// // Now They Public so i can access
+            /// TypeA typeA = new TypeA();
+            /// //typeA.X = 10; [Invalid] X is inaccessible due to its protection level "private".
+            /// //typeA.Y = 20; [InValid] Y is inaccessible due to its protection level  "internal"
+            /// typeA.Z = 30; // [Valid]  Z is "public"
+            /// 
+            /// EmployeeBase employee = new EmployeeBase();
+            /// FullTimeEmployee employee2 = new FullTimeEmployee();
+            /// 
+            /// TypeD obj = new TypeD();
+            /// TypeB typeB = new TypeB();
+            /// //typeB.TestTypeB();
+            /// 
+            /// 
+            /// 
+            /// //obj.
+            /// //obj.X; not vaild
+            /// //obj.Y; not vaild
+            /// //obj.Z = 30; //Here not vaild is internal
             #endregion
 
             #endregion
 
             #region Enum
 
-            #region Part 01
-            ///Person person = new Person();
-            ///person.Id = 1001;
-            ///person.Name = "Mena";
-            ///person.Salary = 10_000;
-            ///person.Gender = Gender.Male;
-
+            #region Part 01 (Basics)
+            /// Person person = new Person();
+            /// person.Id = 1001;
+            /// person.Name = "Mena";
+            /// person.Salary = 10_000;
+            /// person.Gender = Gender.Male;
+            ///
             /// Gender myGender = Gender.Female;
             /// Console.WriteLine(myGender);
-
+            ///
             /// Grade myGrade = Grade.A; // 1 Byte // 4 Bytes
             ///
             /// myGrade = (Grade)3;  // D
@@ -100,7 +100,7 @@ namespace Demo
             /// Console.WriteLine(myGrade); 
             #endregion
 
-            #region Part 02
+            #region Part 02 (Casting)
             /// //Gender myGender = (Gender) "Male"; // casting operatore is function, 
             /// // should from numaric type to Gender not from string
             /// 
@@ -117,11 +117,22 @@ namespace Demo
             /// 
             /// Enum.TryParse/*<Gender>*/("any ", true, out myGender); // Not Make Boxing && UnBoxing
             /// 
-            /// 
             /// Console.WriteLine(myGender);
             #endregion
 
-            #region Part 03
+            #region Part 03 (Advanced Example)
+            //Decimal to binary
+            /* 3    to  ..
+             byte = 8 bit => 0,1
+             00000000
+             2pow(7)=128, 2pow(6)=64, 2pow(5)=32, 2pow(4)=16, 2pow(3)=8, 2pow(2)=4, 2pow(1)=2, 2pow(0)=1
+             128,64,32,16,8,4,2,1
+             so when try to transform 3
+             => (128*0)+(64*0)+(32*0)+(16*0)+(8*0)+(4*0)+(2*1)+(1*1) =>
+             [00000011] 
+            */
+            
+            
             /// Permission myPermission = (Permission)3; //Read, write
             /// //(Binary Compare)
             /// /* 1,2,4,8,16,32,64,128  */
@@ -140,6 +151,7 @@ namespace Demo
             /// //                                                            = 0+0+2+0 = 2
             /// Console.WriteLine(myPermission); // write                     =     2
             /// 
+            /// // this operator(~)  if 0 => 1 and if 1 => 0
             /// myPermission &= ~(Permission.write);  // 7 & ~(2) =>
             /// //                                [0111]&~[0010] =>
             /// //                                [0111]& [1101] = [0101]
@@ -159,10 +171,12 @@ namespace Demo
             /// myPermission ^= Permission.Excute; // like toggle
             /// Console.WriteLine(myPermission); //Write , Excute  
             /// 
+            /// // Summary
+            /// 
             /// // `|=`  => to Add
             /// // `&= ~()  `  => to Delete
             /// // `^=` => to Toggle
-
+            /// 
             #endregion
 
             #endregion
